@@ -1,0 +1,94 @@
+{
+  "name": "@syropian/autotile",
+  "version": "1.0.0",
+  "description": "Framework-agnostic bitmask autotiling engine.",
+  "license": "MIT",
+  "author": "Collin Henderson <collin@syropia.net>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syropian/autotile.git"
+  },
+  "homepage": "https://github.com/syropian/autotile",
+  "bugs": {
+    "url": "https://github.com/syropian/autotile/issues"
+  },
+  "keywords": [
+    "autotile",
+    "autotiling",
+    "bitmask",
+    "tilemap",
+    "grid",
+    "game-dev"
+  ],
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./core/autotile": {
+      "types": "./dist/types/core/autotile.d.ts",
+      "import": "./dist/esm/core/autotile.js"
+    },
+    "./core/bitmask": {
+      "types": "./dist/types/core/bitmask.d.ts",
+      "import": "./dist/esm/core/bitmask.js"
+    },
+    "./core/types": {
+      "types": "./dist/types/core/types.d.ts",
+      "import": "./dist/esm/core/types.js"
+    },
+    "./profiles/path-fourWay": {
+      "types": "./dist/types/profiles/path-fourWay.d.ts",
+      "import": "./dist/esm/profiles/path-fourWay.js"
+    },
+    "./validation/theme": {
+      "types": "./dist/types/validation/theme.d.ts",
+      "import": "./dist/esm/validation/theme.js"
+    },
+    "./debug/mask-lookup": {
+      "types": "./dist/types/debug/mask-lookup.d.ts",
+      "import": "./dist/esm/debug/mask-lookup.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "MIGRATION.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "pnpm run clean && pnpm run build:esm && pnpm run build:types",
+    "build:example": "vite build",
+    "dev": "vite",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "typecheck:example": "vue-tsc -p tsconfig.examples.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@iconify/vue": "^5.0.0",
+    "@types/node": "^24.6.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "shiki": "^4.0.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.44.1",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4",
+    "vue": "^3.5.22",
+    "vue-tsc": "^3.1.1"
+  }
+}
