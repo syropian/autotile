@@ -320,6 +320,7 @@ const customProfileSnippet = `const directions = [
         </header>
 
         <section class="hero">
+          <p class="hero-eyebrow">@syropian/autotile</p>
           <h1 class="hero-title" data-text="Smart tiles for game maps">
             <span>Smart tiles for game maps</span>
           </h1>
@@ -682,10 +683,12 @@ const customProfileSnippet = `const directions = [
   min-width: 320px;
   min-height: 100dvh;
   background: transparent;
+  overflow-x: hidden;
 }
 
 :global(html) {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 :global(button),
@@ -697,6 +700,7 @@ const customProfileSnippet = `const directions = [
 
 :global(#app) {
   min-height: 100dvh;
+  overflow-x: clip;
 }
 
 :global(::selection) {
@@ -946,6 +950,31 @@ const customProfileSnippet = `const directions = [
   padding-top: 1rem;
   z-index: 2;
   text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  margin: 0 0 0.8rem;
+  padding: 0.42rem 0.8rem 0.38rem;
+  border: 1px solid rgba(var(--rgb-cyan-300), 0.18);
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--rgb-cyan-300), 0.14),
+      rgba(var(--rgb-pink-400), 0.12)
+    ),
+    rgba(7, 12, 27, 0.58);
+  box-shadow:
+    0 10px 24px rgba(var(--rgb-slate-900), 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-heading-start);
+  backdrop-filter: blur(5px);
 }
 
 .hero h1,
@@ -1733,6 +1762,13 @@ p code {
 
   .hero {
     margin-bottom: 1rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.7rem;
+    padding-inline: 0.7rem;
+    font-size: 0.69rem;
+    letter-spacing: 0.14em;
   }
 
   .lede-block {

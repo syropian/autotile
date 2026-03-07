@@ -8,7 +8,7 @@
 
 <style scoped>
 .grid-backdrop {
-  scale: 1.5;
+  scale: 2;
   position: absolute;
   inset: 0;
   overflow: hidden;
@@ -112,6 +112,10 @@
 }
 
 @media (max-width: 720px) {
+  .grid-backdrop {
+    transform: translateY(-2.5rem);
+  }
+
   .grid-backdrop__glow {
     width: 52%;
     height: 44%;
