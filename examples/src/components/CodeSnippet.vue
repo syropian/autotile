@@ -253,7 +253,7 @@ watch(
     box-shadow 180ms ease;
 }
 
-.snippet-tab:hover {
+.snippet-tab:not(.snippet-tab--active):hover {
   color: #f8fbff;
   background: rgba(255, 255, 255, 0.05);
 }
