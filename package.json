@@ -1,6 +1,6 @@
 {
   "name": "@syropian/autotile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Framework-agnostic bitmask autotiling engine.",
   "license": "MIT",
   "author": "Collin Henderson <collin@syropia.net>",
